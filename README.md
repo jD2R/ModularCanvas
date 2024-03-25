@@ -1,3 +1,5 @@
+![Banner image](./img/banner.png)
+
 # ModularCanvas
 
 ModularCanvas is a hobby project that I've been working on. It aims to replicate all of the major features of a canvas manipulation library such as [Processing.js](https://github.com/processing-js/processing-js) or, more notably in my specific case, [ski.js](https://github.com/thelegendski/ski.js). In addition, I'm adding some features that I thought would be nice to have.
