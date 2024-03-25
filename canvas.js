@@ -1,25 +1,14 @@
-import KeyInput from "./src/input/keys.js";
-import MouseInput from "./src/input/mouse.js";
-import Text from "./src/drawing/text.js"
-import Color from "./src/drawing/color.js"
-import Animate from "./src/basic/animate.js"
-import Size from "./src/basic/size.js"
-
-const moduleImports = [
-    Text(),
-    Color(),
-    Animate(),
-    Size(),
-    KeyInput(),
-    MouseInput(),
-];
+import getModules from "./src/util/modules.js";
 
 export default class Canvas {
 
-    constructor ( canvasElement ) {
+    constructor ( canvasElement, imports ) {
 
         this.canvasElement = canvasElement;
         this.context = canvasElement.getContext("2d");
+
+        let modules = getModules(imports);
+        Object.assign(this, ...modules);
 
         this.#canvasSetup();
 
@@ -82,5 +71,3 @@ export default class Canvas {
     }
      
 }
-
-Object.assign(Canvas.prototype, ...moduleImports);

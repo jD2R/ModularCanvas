@@ -9,33 +9,22 @@
 
 <body>
 	<canvas id="canvas"></canvas>
-    <!-- <canvas id="canvas2"></canvas> -->
 
 	<!-- user scripts -->
 	<script type="module">
         import Canvas from "./canvas.js";
 
-		const canvas = new Canvas(document.getElementById("canvas"));
+		const canvas = new Canvas(document.getElementById("canvas"), [
+            "Text", "Color", "Size", "Animate"
+        ]);
         canvas.size(600, 600);
-
-        // const canvas2 = new Canvas(document.getElementById("canvas2"));
-        // canvas2.size(600, 600);
 
         canvas.draw(() => {
             canvas.background("red");
             canvas.fill("white");
             canvas.text(`${canvas.mouseX}, ${canvas.mouseY}`, 20, 20);
             canvas.text(`${canvas.frameRate.toFixed(1)}`, 20, 40);
-            canvas.text(`${canvas.keys}`, 20, 60);
         });
-
-        // canvas2.draw(() => {
-        //     canvas2.background("red");
-        //     canvas2.fill("white");
-        //     canvas2.text(`${canvas2.mouseX}, ${canvas2.mouseY}`, 20, 20);
-        //     canvas2.text(`${canvas2.frameRate.toFixed(1)}`, 20, 40);
-        //     canvas2.text(`${canvas2.keys}`, 20, 60);
-        // });
 	</script>
 </body>
 
